@@ -9,8 +9,7 @@ module Application.Controllers {
 		lifeFactory: any;
 
 
-		constructor($scope: ng.IScope, Player: any, Life: any) {
-=======		constructor($scope: ng.IScope, Player:any, Work:any) {
+		constructor($scope: ng.IScope, Player: any, Work:any, Life: any) {
 
 			this.scope = $scope;
 			this.player = new Player;
