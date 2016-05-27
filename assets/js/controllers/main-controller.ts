@@ -17,7 +17,7 @@ module Application.Controllers {
 
 			this.lifeFactory = new Life;
 
-			this.sysMsg = "Hello !";
+			this.sysMsg = "Hello "+ player.name +" !";
 
 			console.log(this.player);
 

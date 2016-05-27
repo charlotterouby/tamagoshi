@@ -40,8 +40,32 @@
 			
 			<div class="col-md-6">
 					
-					<hr>
-					<h1>Actions</h1>
+				<div class="panel panel-primary">
+
+					<div class="panel-body">
+
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+						<li ><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Life</a></li>
+						<li ><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Work</a></li>
+						<li ><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Fun</a></li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home"> life content</div>
+						<div role="tabpanel" class="tab-pane" id="profile"> work content</div>
+						<div role="tabpanel" class="tab-pane" id="messages">fun content</div>
+						</div>
+
+				  </div> <!-- FIN PANEL BODY -->
+
+					<div class="panel-heading">
+					<h2 class="panel-title">Actions</h2>
+					</div> <!-- FIN PANEL HEADING -->
+					
+				</div> <!-- FIN PANEL -->
+
 
 			</div>
 		
@@ -49,10 +73,10 @@
 
 	
 
-
-
 	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="dist/scripts.js"></script>
 </body>
 </html>
