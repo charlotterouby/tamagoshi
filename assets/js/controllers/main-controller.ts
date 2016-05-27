@@ -23,15 +23,15 @@ module Application.Controllers {
 
 
 		// Vérification des stats du player pour lancement des msg alertes et des progress-bar
-		updateStats(player, msg){
-			let verifStats = function() {
+		updateStats(player, msg) {
+			let verifStats = function(player, msg) {
 				// Mise à jour des progress-bars
 				$('#playerLife .progress-bar').css("width", player.life + "%").attr("aria-valuenow", player.life);
 				$('#playerFood .progress-bar').css("width", player.food + "%").attr("aria-valuenow", player.food);
 				$('#playerHealth .progress-bar').css("width", player.health + "%").attr("aria-valuenow", player.health);
 				$('#playerFun .progress-bar').css("width", player.fun + "%").attr("aria-valuenow", player.fun);
 
-				console.log("verifStats");
+				//console.log(player);
 
 				// Msg a afficher du moins important au plus important
 				// @ gérer visuellement les différents niveaux d'alerte des messages
@@ -55,10 +55,14 @@ module Application.Controllers {
 					clearInterval(verifInterval);
 				}
 
+				player.life--;
 				console.log(msg);
 			};
 
-		var verifInterval = setInterval(verifStats, 1000);
+			var verifInterval = setInterval(
+				function(){
+					verifStats(player, msg)	
+				}, 1000);
 		};
 	}	
 
