@@ -6,27 +6,51 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-0UBL8wxZ28kqJ8w8N8RUV0odBG5w8D/Y+rb+o7hr2F3dS9twlAE8S7VUtVSRe5cc" crossorigin="anonymous">
 	<link rel="stylesheet" href="dist/style.css">
 </head>
-<body ng-controller="HomeController as hc">
+<body class="container" ng-controller="HomeController as hc">
 	<section>
 		<h1>Tamagoshi App <small>by Charlotte Rouby & Yann Parmentier</small></h1>
 	</section>
 
-	<div class="avatar">
-		<img src="assets/img/pichu.gif" alt="">
 
-	</div>
+		<div class="row">
+			
+			<div class="col-md-12">Msg</div>
 
 
-	<article>
-	<h2 ng-bind="hc.player.name"></h2>
-		<p>Life: <span ng-bind="hc.player.life"></span></p>
-		<p>Health: <span ng-bind="hc.player.health"></span></p>
-		<p>Food: <span ng-bind="hc.player.food"></span></p>
-		<p>Fun: <span ng-bind="hc.player.fun"></span></p>
-		<p>XP: <span ng-bind="hc.player.xp"></span></p>
-		<p>Money: <span ng-bind="hc.player.money"></span></p>
-	</article>
+			<div class="col-md-6 pull-left">
+				<div class="avatar">
+				<img src="assets/img/pichu.gif" alt="">
+				</div>
+			</div>
+
+			<div class="col-md-6">
+
+					<article>
+					<h2 ng-bind="hc.player.name"></h2>
+						<p>Life: <span ng-bind="hc.player.life"></span></p>
+						<p>Health: <span ng-bind="hc.player.health"></span></p>
+						<p>Food: <span ng-bind="hc.player.food"></span></p>
+						<p>Fun: <span ng-bind="hc.player.fun"></span></p>
+						<p>XP: <span ng-bind="hc.player.xp"></span></p>
+						<p>Money: <span ng-bind="hc.player.money"></span></p>
+					</article>
 	
+
+			</div>			
+			
+			<div class="col-md-6">
+					
+					<hr>
+					<h1>Actions</h1>
+
+			</div>
+		
+		</div>
+
+	
+
+
+
 	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 	<script src="dist/scripts.js"></script>
