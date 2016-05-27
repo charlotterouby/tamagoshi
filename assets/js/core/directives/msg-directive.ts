@@ -8,9 +8,11 @@ module Application.Directives {
 
 		constructor() {
 
+			var ret = this.factory();
 			console.log('hello from Msg directive');
+			console.log(ret);
 
-			return this.factory();
+			return ret;
 		}
  
 		factory(): any {
@@ -20,9 +22,9 @@ module Application.Directives {
 				templateUrl: 'templates/msg-template.html',
 				restrict: 'EA',
 				scope: {
-					msg: '='
+					sysMsg: '='
 				}
-			}
+			};
 
 		}
 

@@ -4,10 +4,11 @@
 
 module Application.Controllers {
 	export class HomeController {
+
 		scope: any;
 		player: any;
 		lifeFactory: any;
-
+		sysMsg: string;
 
 		constructor($scope: ng.IScope, Player: any, Work:any, Life: any) {
 
@@ -16,7 +17,9 @@ module Application.Controllers {
 
 			this.lifeFactory = new Life;
 
-			//console.log(this.player);
+			this.sysMsg = "Hello !";
+
+			console.log(this.player);
 
 			this.lifeFactory.wash(this.player);
 
