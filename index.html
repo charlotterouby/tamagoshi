@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="dist/style.css">
 </head>
 <body class="container" ng-controller="HomeController as hc">
-	<section>
+	<section class="page-header">
 		<h1>Tamagoshi App <br><small>by Charlotte Rouby & Yann Parmentier</small></h1>
 		<button class="btn btn-primary" ng-click="hc.updateStats()">Commencer la partie</button>
 	</section>
@@ -29,6 +29,9 @@
 			<div class="col-md-6">
 					
 				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h2 class="panel-title">Actions</h2>
+					</div> <!-- FIN PANEL HEADING -->
 
 					<div class="panel-body">
 
@@ -48,9 +51,7 @@
 
 				  </div> <!-- FIN PANEL BODY -->
 
-					<div class="panel-heading">
-					<h2 class="panel-title">Actions</h2>
-					</div> <!-- FIN PANEL HEADING -->
+					
 					
 				</div> <!-- FIN PANEL -->
 
