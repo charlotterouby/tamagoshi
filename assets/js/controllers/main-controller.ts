@@ -28,9 +28,9 @@ module Application.Controllers {
 
 		}
 		
-		updateStats(){
+		updateStats(player){
 			// Vérification des stats du player pour lancement des msg alertes et des progress-bar
-			let verifStats = function(player) {
+			let verifStats = function() {
 				$('#playerLife .progress-bar').css("width", player.life + "%").attr("aria-valuenow", player.life);
 				$('#playerFood .progress-bar').css("width", player.food + "%").attr("aria-valuenow", player.food);
 				$('#playerHealth .progress-bar').css("width", player.health + "%").attr("aria-valuenow", player.health);
@@ -38,7 +38,7 @@ module Application.Controllers {
 				console.log("verifStats");
 			};
 
-			setInterval(verifStats(this.player), 1000);
+			var verifInterval = setInterval(verifStats, 1000);
 		}
 	}	
 
