@@ -9,6 +9,7 @@ var sass = require('gulp-sass');
 
 // Variables fichiers sources 
 var jsSource = [
+    './assets/js/core/directives/*.ts',
     './assets/js/core/factories/*.ts',
     './assets/js/controllers/*.ts',
     './assets/js/app.ts'
