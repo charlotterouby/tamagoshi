@@ -8,7 +8,8 @@
 </head>
 <body class="container" ng-controller="HomeController as hc">
 	<section>
-		<h1>Tamagoshi App <small>by Charlotte Rouby & Yann Parmentier</small></h1>
+		<h1>Tamagoshi App <br><small>by Charlotte Rouby & Yann Parmentier</small></h1>
+		<button class="btn btn-primary" ng-click="hc.updateStats()">Commencer la partie</button>
 	</section>
 
 
@@ -22,21 +23,8 @@
 				<img src="assets/img/pichu.gif" alt="">
 				</div>
 			</div>
-
-			<div class="col-md-6" data-stats-directive data-player="hc.player">
-
-					<!-- <article>
-					<h2 ng-bind="hc.player.name"></h2>
-						<p>Life: <span ng-bind="hc.player.life"></span></p>
-						<p>Health: <span ng-bind="hc.player.health"></span></p>
-						<p>Food: <span ng-bind="hc.player.food"></span></p>
-						<p>Fun: <span ng-bind="hc.player.fun"></span></p>
-						<p>XP: <span ng-bind="hc.player.xp"></span></p>
-						<p>Money: <span ng-bind="hc.player.money"></span></p>
-					</article> -->
-	
-
-			</div>			
+			<div class="col-md-6" data-stats-directive data-player="hc.player"></div>			
+			
 			
 			<div class="col-md-6">
 					

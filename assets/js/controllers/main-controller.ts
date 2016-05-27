@@ -17,7 +17,7 @@ module Application.Controllers {
 
 			this.lifeFactory = new Life;
 
-			this.sysMsg = "Hello "+ player.name +" !";
+			this.sysMsg = "Hello "+ this.player.name +" !";
 
 			console.log(this.player);
 
@@ -26,6 +26,19 @@ module Application.Controllers {
 			//$('.container').fadeOut('slow');
 
 
+		}
+		
+		updateStats(){
+			// Vérification des stats du player pour lancement des msg alertes et des progress-bar
+			let verifStats = function(player) {
+				$('#playerLife .progress-bar').css("width", player.life + "%").attr("aria-valuenow", player.life);
+				$('#playerFood .progress-bar').css("width", player.food + "%").attr("aria-valuenow", player.food);
+				$('#playerHealth .progress-bar').css("width", player.health + "%").attr("aria-valuenow", player.health);
+				$('playerFun .progress-bar').css("width", player.fun + "%").attr("aria-valuenow", player.fun);
+				console.log("verifStats");
+			};
+
+			setInterval(verifStats(this.player), 1000);
 		}
 	}	
 
