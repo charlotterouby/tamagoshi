@@ -8,11 +8,10 @@ module Application.Controllers {
 		player: any;
 		lifeFactory: any;
 
-<<<<<<< HEAD
+
 		constructor($scope: ng.IScope, Player: any, Life: any) {
-=======
-		constructor($scope: ng.IScope, Player:any, Work:any) {
->>>>>>> 8a04422d62256644f6ffbffc463430aac5b47cca
+=======		constructor($scope: ng.IScope, Player:any, Work:any) {
+
 			this.scope = $scope;
 			this.player = new Player;
 
