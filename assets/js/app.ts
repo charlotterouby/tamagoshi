@@ -1,5 +1,6 @@
 /// <reference path="core/angular.d.ts"/>
 /// <reference path="core/directives/msg-directive.ts"/>
+/// <reference path="core/directives/stats-directive.ts"/>
 /// <reference path="core/factories/life-factory.ts"/>
 /// <reference path="core/factories/player-factory.ts"/>
 /// <reference path="core/factories/work-factory.ts"/>
@@ -15,6 +16,11 @@ tamagoshiApp.factory("Player", [() =>
 // Msg Directive
 tamagoshiApp.directive("msgDirective", () =>
 	new Application.Directives.MsgDirective()
+);
+
+// Stats Directive
+tamagoshiApp.directive("statsDirective", () =>
+	new Application.Directives.statsDirective()
 );
 
 // LifeFactory

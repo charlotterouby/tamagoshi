@@ -5,6 +5,7 @@
 module Application.Directives {
 	export class statsDirective {
 		constructor(){
+			console.log("statsDirective");
 			return this.instanceDirective();
 		}
 		instanceDirective():any {
