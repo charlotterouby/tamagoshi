@@ -27,6 +27,12 @@ module Application.Factories {
 
 		}
 
+		buyFood( goshi: any): any{
+
+			console.log(goshi.name + ' is buying food');
+
+		}
+
 
 
 	}
