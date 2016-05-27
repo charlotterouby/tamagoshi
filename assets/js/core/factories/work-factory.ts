@@ -27,6 +27,22 @@ module Application.Factories {
 			player.xp = player.xp + 5;
 		}
 
+		updateLevel(player){
+			if(player.level === 3 && player.xp === 100){
+				alert('You win !');
+			} else if(player.xp === 100){
+				alert("Votre Tamagoshi monte d'un niveau");
+				player.level += 1;
+				player.xp = 0;
+			}
 
+			if(player.level === 2){
+				player.name = "Pikachu";
+				alert("Votre tamagoshi évolue ! Il devient " + player.name);
+			} else if (player.level === 3){
+				player.name = "Raichu";
+				alert("Votre tamagoshi évolue ! Il devient " + player.name);
+			}
+		}
 	}
 }

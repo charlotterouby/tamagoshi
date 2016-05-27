@@ -5,26 +5,21 @@ module Application.Factories {
 	export class Player{
 		private player: any;
 
-		name: string;
-
-
 		constructor (){
 			return this.createPlayer();
 		}
 
 		private createPlayer(): any{
 			let player = {
-				name: "Pikachu",
+				name: "Pichu",
 				life: 15,
 				food: 20,
 				fun: 5,
-				xp: 4,
+				xp: 0,
 				money: 400,
-				health: 40
+				health: 40,
+				level: 1
 			}
-
-			this.name = 'Pikachu';
-
 			return player;
 		}
 	}
