@@ -1,4 +1,5 @@
 /// <reference path="core/angular.d.ts"/>
+/// <reference path="core/directives/msg-directive.ts"/>
 /// <reference path="core/factories/life-factory.ts"/>
 /// <reference path="core/factories/player-factory.ts"/>
 /// <reference path="core/factories/work-factory.ts"/>
@@ -11,6 +12,11 @@ tamagoshiApp.factory("Player", [() =>
 	Application.Factories.Player
 ]);
 
+// Msg Directive
+tamagoshiApp.directive("msgDirective", () =>
+	new Application.Directives.MsgDirective()
+);
+
 // LifeFactory
 tamagoshiApp.factory("Life", () =>	Application.Factories.LifeFactory );
 
@@ -19,7 +25,8 @@ tamagoshiApp.factory("Work", [() =>
 	Application.Factories.Work
 ]);
 
+
 // HomeController
 tamagoshiApp.controller('HomeController', ['$scope', 'Player', 'Work', 'Life', ($scope, Player, Work, Life) =>
 	new Application.Controllers.HomeController($scope, Player, Work, Life)
-]);
+]); 
