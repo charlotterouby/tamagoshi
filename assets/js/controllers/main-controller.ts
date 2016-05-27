@@ -23,7 +23,7 @@ module Application.Controllers {
 
 			this.lifeFactory.wash(this.player);
 
-			$('.container').fadeOut('slow');
+			//$('.container').fadeOut('slow');
 
 
 		}
