@@ -7,41 +7,44 @@ module Application.Factories {
 		
 		constructor (){}
 
-		combat(player) {
+		combat(player, msg) {
 			let win: number = Math.random();
 
 			if(win === 0){
-				alert('Pikachu perd le combat');
+				msg = 'Pikachu perd le combat';
 				player.life = player.life - 5;
 				player.health = player.health - 5;
 				player.money = player.money - 15;
 			} else {
-				alert('Pikachu gagne le combat');
+				msg = 'Pikachu gagne le combat';
 				player.xp = player.xp + 5;
 				player.money = player.money + 15;
 			}
 		};
 
-		training(player){
-			alert('Pikachu gagne en expérience');
+		training(player, msg){
+			msg ='Pikachu gagne en expérience';
 			player.xp = player.xp + 5;
 		}
 
-		updateLevel(player){
+		updateLevel(player, msg){
 			if(player.level === 3 && player.xp === 100){
-				alert('You win !');
+				msg = "Vous avez gagné la partie !";
+				// @ insérer la fonction clearInterval pour stopper la boucle de updateStats lancée en début de partie
 			} else if(player.xp === 100){
-				alert("Votre Tamagoshi monte d'un niveau");
+				msg = "Tamagochu monte d'un niveau !";
 				player.level += 1;
 				player.xp = 0;
 			}
 
 			if(player.level === 2){
 				player.name = "Pikachu";
-				alert("Votre tamagoshi évolue ! Il devient " + player.name);
+				msg = "Tamagochu évolue ! Il devient " + player.name;
+				// @ insérer le changement d'avatar
 			} else if (player.level === 3){
 				player.name = "Raichu";
-				alert("Votre tamagoshi évolue ! Il devient " + player.name);
+				msg = "Tamagochu évolue ! Il devient " + player.name;
+				// @ insérer le changement d'avatar
 			}
 		}
 	}

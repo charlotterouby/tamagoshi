@@ -7,60 +7,53 @@
 	<link rel="stylesheet" href="dist/style.css">
 </head>
 <body class="container" ng-controller="HomeController as hc">
+	<!-- HEADER -->
 	<section class="page-header">
 		<h1>Tamagoshi App <br><small>by Charlotte Rouby & Yann Parmentier</small></h1>
-		<button class="btn btn-primary" ng-click="hc.updateStats(hc.player)">Commencer la partie</button>
+		<button class="btn btn-primary" ng-click="hc.updateStats(hc.player, hc.sysMsg)">Commencer la partie</button>
 	</section>
-
-
-		<div class="row">
-			
-			<msg-directive sys-msg="hc.sysMsg"></msg-directive >
-
-
-			<div class="col-md-6 pull-left">
-				<div class="avatar">
-				<img src="assets/img/pichu.gif" alt="">
-				</div>
+	
+	<div class="row">
+		<!-- SECTION PRINCIPALE -->
+		<!-- AFFICHAGE MSG -->
+		<msg-directive sys-msg="hc.sysMsg"></msg-directive >
+		
+		<!-- AFFICHAGE AVATAR -->
+		<div class="col-md-6 pull-left">
+			<div class="avatar">
+				<img src="assets/img/pichu.gif" alt="avatar Tamagoshu">
 			</div>
-			<div class="col-md-6" data-stats-directive data-player="hc.player"></div>			
+		</div>
 			
-			
-			<div class="col-md-6">
-					
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h2 class="panel-title">Actions</h2>
-					</div> <!-- FIN PANEL HEADING -->
-
-					<div class="panel-body">
-
-						<!-- Nav tabs -->
-						<ul class="nav nav-tabs" role="tablist">
+		<!-- AFFICHAGE SIDEBAR	 -->
+		<!-- AFFICHAGE STATS -->
+		<div class="col-md-6" data-stats-directive data-player="hc.player"></div>	
+		<!-- AFFICHAGE PANEL ACTIONS -->
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<!-- panel heading -->
+				<div class="panel-heading">
+					<h2 class="panel-title">Actions</h2>
+				</div>
+				<!-- panel body -->
+				<div class="panel-body">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
 						<li ><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Life</a></li>
 						<li ><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Work</a></li>
 						<li ><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Fun</a></li>
-						</ul>
+					</ul>
 
-						<!-- Tab panes -->
-						<div class="tab-content">
+					<!-- Tab panes -->
+					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane active" id="home"> life content</div>
 						<div role="tabpanel" class="tab-pane" id="profile"> work content</div>
 						<div role="tabpanel" class="tab-pane" id="messages">fun content</div>
-						</div>
-
-				  </div> <!-- FIN PANEL BODY -->
-
-					
-					
-				</div> <!-- FIN PANEL -->
-
-
+					</div>
+				</div>
 			</div>
-		
-		</div>
-
-	
+		</div> <!-- FIN PANEL ACTIONS -->
+	</div>
 
 	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>

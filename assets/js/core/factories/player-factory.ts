@@ -12,13 +12,13 @@ module Application.Factories {
 		private createPlayer(): any{
 			let player = {
 				name: "Pichu",
-				life: 15,
-				food: 20,
-				fun: 5,
+				level: 1,
 				xp: 0,
 				money: 400,
-				health: 40,
-				level: 1
+				life: 20,
+				food: 20,
+				fun: 5,
+				health: 40
 			}
 			return player;
 		}
