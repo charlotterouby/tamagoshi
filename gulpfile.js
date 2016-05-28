@@ -15,7 +15,10 @@ var jsSource = [
     './assets/js/app.ts'
 ];
 
-var cssSource = './assets/styles/style.scss';
+var cssSource = [
+    './assets/styles/*.scss',
+    './assets/styles/partials/*.scss'
+];
 
 // Variables fichiers sorties
 var jsOut = 'scripts.js';
@@ -32,7 +35,7 @@ gulp.task('compileJS', function() {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('compileCss', function() {
+gulp.task('compileCSS', function() {
     return gulp.src(cssSource)
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
@@ -41,8 +44,8 @@ gulp.task('compileCss', function() {
 });
 
 // Watchers
-gulp.task('watchCSS', ['compileCss'], function() {
-    gulp.watch(cssSource['compileCSS']);
+gulp.task('watchCSS', ['compileCSS'], function() {
+    gulp.watch(cssSource, ['compileCSS']);
 });
 
 gulp.task('watchJS', ['compileJS'], function() {

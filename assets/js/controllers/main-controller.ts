@@ -59,10 +59,7 @@ module Application.Controllers {
 				console.log(msg);
 			};
 
-			var verifInterval = setInterval(
-				function(){
-					verifStats(player, msg)	
-				}, 1000);
+			var verifInterval = setInterval(function(){verifStats(player, msg)}, 1000);
 		};
 	}	
 

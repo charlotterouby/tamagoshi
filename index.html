@@ -6,7 +6,7 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-0UBL8wxZ28kqJ8w8N8RUV0odBG5w8D/Y+rb+o7hr2F3dS9twlAE8S7VUtVSRe5cc" crossorigin="anonymous">
 	<link rel="stylesheet" href="dist/style.css">
 </head>
-<body class="container" ng-controller="HomeController as hc">
+<body class="container-fluid" ng-controller="HomeController as hc">
 	<!-- HEADER -->
 	<section class="page-header">
 		<h1>Tamagoshi App <br><small>by Charlotte Rouby & Yann Parmentier</small></h1>
@@ -15,21 +15,23 @@
 	
 	<div class="row">
 		<!-- SECTION PRINCIPALE -->
-		<!-- AFFICHAGE MSG -->
-		<msg-directive sys-msg="hc.sysMsg"></msg-directive >
-		
-		<!-- AFFICHAGE AVATAR -->
-		<div class="col-md-6 pull-left">
-			<div class="avatar">
-				<img src="assets/img/pichu.gif" alt="avatar Tamagoshu">
-			</div>
+		<div class="col-xs-12 col-md-8">
+			<!-- AFFICHAGE MSG -->
+			<msg-directive sys-msg="hc.sysMsg"></msg-directive >
+			
+			<!-- AFFICHAGE AVATAR -->
+			<!-- <div class="col-xs-12 col-md-6 pull-left"> -->
+				<div class="avatar col-xs-12 col-md-12">
+					<img src="assets/img/pichu.gif" alt="avatar Tamagoshu">
+				</div>
+			<!-- </div> -->
 		</div>
 			
 		<!-- AFFICHAGE SIDEBAR	 -->
-		<!-- AFFICHAGE STATS -->
-		<div class="col-md-6" data-stats-directive data-player="hc.player"></div>	
-		<!-- AFFICHAGE PANEL ACTIONS -->
-		<div class="col-md-6">
+		<div class="col-xs-12 col-md-4">
+			<!-- AFFICHAGE STATS -->
+			<div data-stats-directive data-player="hc.player"></div>	
+			<!-- AFFICHAGE PANEL ACTIONS -->
 			<div class="panel panel-primary">
 				<!-- panel heading -->
 				<div class="panel-heading">
@@ -43,7 +45,6 @@
 						<li ><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Work</a></li>
 						<li ><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Fun</a></li>
 					</ul>
-
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane active" id="home"> life content</div>
@@ -52,7 +53,9 @@
 					</div>
 				</div>
 			</div>
-		</div> <!-- FIN PANEL ACTIONS -->
+			<!-- FIN PANEL ACTIONS -->
+		</div>
+		<!-- FIN SIDEBAR  -->
 	</div>
 
 	<!-- SCRIPTS -->
