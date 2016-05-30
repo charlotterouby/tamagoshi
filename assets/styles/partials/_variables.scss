@@ -28,21 +28,26 @@ $palettes: (
 		mid-dark: #820069,
 		base: #C0009C, 
 		mid-light: #C83AAD, 
-		light: #E490D4
+		light: lighten(#E490D4, 15%)
 	),
 	vert: (
 		dark: #003E2B, 
 		mid-dark: #007854,
 		base: #00B47D,
 		mid-light: #37BE95,
-		light: #8CDFC6
+		light: lighten(#8CDFC6, 15%)
 	), 
 	bleu: (
 		dark: #090342, 
 		mid-dark: #170D7E,
 		base: #2516BC,
 		mid-light: #574CC4,
-		light: #A09AE2
+		light: lighten(#A09AE2, 15%)
+	), 
+	gris: (
+		dark: #000000,
+		base: lighten(#000000, 50%),
+		light: #FFFFFF
 	)
 );
 

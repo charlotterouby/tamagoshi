@@ -28,6 +28,21 @@
 	border-color: palette(bleu, light);
 	color: palette(bleu);
 }
+.alert-success {
+	background-color: palette(vert, light);
+	border-color: palette(vert, light);
+	color: palette(vert, dark);
+}
+.alert-warning {
+	background-color: palette(jaune, light);
+	border-color: palette(jaune, light);
+	color: palette(jaune, dark);
+}
+.alert-danger {
+	background-color: palette(rose, light);
+	border-color: palette(rose, light);
+	color: palette(rose, dark);
+}
 
 // PANEL
 .panel-primary {
@@ -47,7 +62,7 @@
 	text-align: center;
 }
 
-@media screen and (max-width: $mobile-max)  {
+@media screen and (max-width: $mobile-max) {
 	.page-header {
 		margin-top: 20px;
 		flex-wrap: wrap;
