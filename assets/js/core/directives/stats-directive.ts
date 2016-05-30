@@ -4,18 +4,20 @@
 
 module Application.Directives {
 	export class statsDirective {
-		constructor(){
+		constructor() {
+
 			console.log("statsDirective");
 			return this.instanceDirective();
 		}
-		instanceDirective():any {
+
+		instanceDirective(): any {
 			return {
 				templateUrl: 'templates/stats-template.html',
-				restrict: 'A',
+				restrict: 'EA' ,
 				scope: {
 					player: "="
 				}
-			}
+			};
 		}
 	}
 }
