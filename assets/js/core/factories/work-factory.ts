@@ -9,18 +9,25 @@ module Application.Factories {
 			console.log('WorkFactory Loaded');
 		}
 
+
+		getRandomIntInclusive(min, max){
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
 		combat(player, msg) {
-			let win: number = Math.random();
+			let win: number = this.getRandomIntInclusive(0,1);
 
 			if(win === 0){
 				msg = 'Pikachu perd le combat';
 				player.life = player.life - 5;
 				player.health = player.health - 5;
 				player.money = player.money - 15;
+				console.log(msg);
 			} else {
 				msg = 'Pikachu gagne le combat';
 				player.xp = player.xp + 5;
 				player.money = player.money + 15;
+				console.log(msg);
 			}
 
 			this.updateLevel(player, msg);
