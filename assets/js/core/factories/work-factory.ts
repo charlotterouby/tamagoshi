@@ -57,10 +57,12 @@ module Application.Factories {
 
 			if(player.level === 2){
 				player.name = "Pikachu";
+				player.img = "assets/img/pikachu.gif";
 				msg = "Tamagochu évolue ! Il devient " + player.name;
 				// @ insérer le changement d'avatar
 			} else if (player.level === 3){
 				player.name = "Raichu";
+				player.img = "assets/img/raichu.gif";				
 				msg = "Tamagochu évolue ! Il devient " + player.name;
 				// @ insérer le changement d'avatar
 			}
