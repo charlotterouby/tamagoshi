@@ -3,13 +3,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
 
-@media screen and (max-width: $mobile-max) {
-	.avatar img {
-		height: 25vh;
+	@media screen and (max-width: $mobile-max) {
+		img {
+			height: 25vh;
+		}
 	}
 }
+
 
 // BUTTON
 .btn-primary {
@@ -69,11 +70,9 @@
 	justify-content: space-around;
 	align-items: center;
 	text-align: center;
-}
-
-@media screen and (max-width: $mobile-max) {
-	.page-header {
-		margin-top: 20px;
+	margin-top: 20px;
+	
+	@media screen and (max-width: $mobile-max) {
 		flex-wrap: wrap;
 	}
 }
