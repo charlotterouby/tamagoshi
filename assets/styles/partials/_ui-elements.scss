@@ -1,0 +1,70 @@
+// AVATAR
+.avatar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (max-width: $mobile-max) {
+	.avatar img {
+		height: 25vh;
+	}
+}
+
+// BUTTON
+.btn-primary {
+	background-color: palette(jaune);
+	border-color: palette(jaune);
+
+	&:hover, &:active, &:focus, &:active:focus {
+		background-color: palette(jaune, mid-dark);
+		border-color: palette(jaune, mid-dark);
+	}
+}
+
+// MESSAGES
+.alert-info {
+	background-color: palette(bleu, light);
+	border-color: palette(bleu, light);
+	color: palette(bleu);
+}
+.alert-success {
+	background-color: palette(vert, light);
+	border-color: palette(vert, light);
+	color: palette(vert, dark);
+}
+.alert-warning {
+	background-color: palette(jaune, light);
+	border-color: palette(jaune, light);
+	color: palette(jaune, dark);
+}
+.alert-danger {
+	background-color: palette(rose, light);
+	border-color: palette(rose, light);
+	color: palette(rose, dark);
+}
+
+// PANEL
+.panel-primary {
+	border-color: palette(jaune);
+
+	.panel-heading {
+		background-color: palette(jaune);
+		border-color: palette(jaune);
+	}
+}
+
+// PAGE HEADER
+.page-header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+
+@media screen and (max-width: $mobile-max) {
+	.page-header {
+		margin-top: 20px;
+		flex-wrap: wrap;
+	}
+}

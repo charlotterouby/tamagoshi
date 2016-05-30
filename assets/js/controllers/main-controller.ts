@@ -5,12 +5,14 @@
 module Application.Controllers {
 	export class HomeController {
 		scope: any;
+		interval: any;
 		player: any;
 		lifeFactory: any;
 		sysMsg: string;
 
-		constructor($scope: ng.IScope, Player: any, Work:any, Life: any) {
+		constructor($scope: ng.IScope, $interval: ng.IIntervalService, Player: any, Work: any, Life: any) {
 			this.scope = $scope;
+			this.interval = $interval;
 			// Player Factory
 			this.player = new Player;
 			// Life Factory
@@ -52,17 +54,15 @@ module Application.Controllers {
 					msg = "Attention votre tamagoshu n'a presque plus de point de vie !";
 				} else if (player.life === 0) {
 					msg = "Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?";
-					clearInterval(verifInterval);
+					stopGame();
 				}
 
 				player.life--;
 				console.log(msg);
 			};
 
-			var verifInterval = setInterval(
-				function(){
-					verifStats(player, msg)	
-				}, 1000);
+			var verifInterval = this.interval(function(){verifStats(player, msg)}, 1000);
+			var stopGame = () => {this.interval.cancel(verifInterval)};
 		};
 	}	
 

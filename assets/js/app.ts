@@ -9,9 +9,17 @@
 var tamagoshiApp = angular.module('tamagoshiApp', []);
 
 // PlayerFactory
-tamagoshiApp.factory("Player", [() =>
+tamagoshiApp.factory("Player", () =>
 	Application.Factories.Player
-]);
+);
+
+// LifeFactory
+tamagoshiApp.factory("Life", () =>	Application.Factories.LifeFactory );
+
+// WorkFactory
+tamagoshiApp.factory("Work", () =>
+	Application.Factories.Work
+);
 
 // Msg Directive
 tamagoshiApp.directive("msgDirective", () =>
@@ -23,16 +31,7 @@ tamagoshiApp.directive("statsDirective", () =>
 	new Application.Directives.statsDirective()
 );
 
-// LifeFactory
-tamagoshiApp.factory("Life", () =>	Application.Factories.LifeFactory );
-
-// WorkFactory
-tamagoshiApp.factory("Work", [() =>
-	Application.Factories.Work
-]);
-
-
 // HomeController
-tamagoshiApp.controller('HomeController', ['$scope', 'Player', 'Work', 'Life', ($scope, Player, Work, Life) =>
-	new Application.Controllers.HomeController($scope, Player, Work, Life)
+tamagoshiApp.controller('HomeController', ['$scope', '$interval', 'Player', 'Work', 'Life', ($scope, $interval, Player, Work, Life) =>
+	new Application.Controllers.HomeController($scope, $interval, Player, Work, Life)
 ]); 
