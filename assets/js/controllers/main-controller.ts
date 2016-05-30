@@ -63,6 +63,10 @@ module Application.Controllers {
 					stopGame();
 				}
 
+				player.life--;
+
+				$('.msgSystem').html(msg);
+				
 				console.log(msg);
 			};
 
