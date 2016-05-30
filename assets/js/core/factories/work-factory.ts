@@ -29,6 +29,8 @@ module Application.Factories {
 				console.log(msg);
 			}
 
+			$('.msgSystem').html(msg);
+
 			this.updateLevel(player, msg);
 		};
 
@@ -37,6 +39,8 @@ module Application.Factories {
 			player.xp = player.xp + 5;
 			console.log(msg);
 			console.log(player.xp);
+
+			$('.msgSystem').html(msg);
 
 			this.updateLevel(player, msg);
 		}
@@ -60,6 +64,8 @@ module Application.Factories {
 				msg = "Tamagochu évolue ! Il devient " + player.name;
 				// @ insérer le changement d'avatar
 			}
+
+			$('.msgSystem').html(msg);
 		}
 	}
 }

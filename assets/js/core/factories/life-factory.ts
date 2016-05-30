@@ -24,6 +24,8 @@ module Application.Factories {
 				msg = goshi.name + ' se lave';
 			 	console.log(msg);
 	 		}
+
+			$('.msgSystem').html(msg);
 		};
 
 		eat( goshi: any, msg: string): any{
@@ -39,6 +41,8 @@ module Application.Factories {
 				msg = goshi.name + ' mange';
 				console.log(msg);
 			}
+
+			$('.msgSystem').html(msg);
 		};
 
 		buyFood( goshi: any, msg: string): any{
@@ -54,6 +58,8 @@ module Application.Factories {
 				goshi.money -= 15;
 				console.log(msg);
 			}
+
+			$('.msgSystem').html(msg);
 		};
 	}
 }

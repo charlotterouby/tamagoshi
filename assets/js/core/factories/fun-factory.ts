@@ -11,6 +11,9 @@ module Application.Factories {
 			msg = player.name + ' joue au ballon';
 			player.fun += 5;
 			player.money -= 20;
+
+			$('.msgSystem').html(msg);
+			
 			console.log(msg);
 		}
 
@@ -18,6 +21,9 @@ module Application.Factories {
 			msg = player.name + ' joue avec un ami';
 			player.fun += 20;
 			player.money -= 50;
+
+			$('.msgSystem').html(msg);
+
 			console.log(msg);
 		}
 
@@ -25,6 +31,9 @@ module Application.Factories {
 			msg = player.name + ' joue avec une peluche qui fait du bruit !';
 			player.fun += 10;
 			player.money -= 30;
+
+			$('.msgSystem').html(msg);
+
 			console.log(msg);
 		}
 	}
