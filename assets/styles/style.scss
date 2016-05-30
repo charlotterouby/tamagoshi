@@ -2,3 +2,6 @@
 @import 'partials/typo';
 @import 'partials/ui-elements';
 
+body{
+	background-color: lighten(palette(jaune), 40%);
+}

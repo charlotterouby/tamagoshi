@@ -8,16 +8,19 @@ module Application.Controllers {
 		interval: any;
 		player: any;
 		lifeFactory: any;
+		workFactory: any;
 		sysMsg: string;
 
 		constructor($scope: ng.IScope, $interval: ng.IIntervalService, Player: any, Work: any, Life: any) {
+			// Angular Services
 			this.scope = $scope;
 			this.interval = $interval;
 			// Player Factory
 			this.player = new Player;
 			// Life Factory
 			this.lifeFactory = new Life;
-			this.lifeFactory.wash(this.player);
+			// Work Factory
+			this.workFactory = new Work;
 			// Msg Directive
 			this.sysMsg = "Hello "+ this.player.name +" !";
 			console.log(this.sysMsg);
@@ -27,6 +30,7 @@ module Application.Controllers {
 		updateStats(player, msg) {
 			let verifStats = function(player, msg) {
 				// Mise à jour des progress-bars
+				$('#playerXp .progress-bar').css("width", player.xp + "%").attr("aria-valuenow", player.xp);
 				$('#playerLife .progress-bar').css("width", player.life + "%").attr("aria-valuenow", player.life);
 				$('#playerFood .progress-bar').css("width", player.food + "%").attr("aria-valuenow", player.food);
 				$('#playerHealth .progress-bar').css("width", player.health + "%").attr("aria-valuenow", player.health);
@@ -56,7 +60,6 @@ module Application.Controllers {
 					stopGame();
 				}
 
-				// player.life--;
 				console.log(msg);
 			};
 
@@ -64,7 +67,7 @@ module Application.Controllers {
 			var stopGame = () => {this.interval.cancel(verifInterval)};
 		};
 
-		
+
 	}	
 
 }

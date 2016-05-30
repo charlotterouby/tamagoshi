@@ -21,6 +21,15 @@
 		border-color: palette(jaune, mid-dark);
 	}
 }
+.btn-info {
+	background-color: palette(bleu, mid-light);
+	border-color: palette(bleu, mid-light);
+
+	&:hover, &:active, &:focus, &:active:focus {
+		background-color: palette(bleu, mid-dark);
+		border-color: palette(bleu, mid-dark);
+	}
+}
 
 // MESSAGES
 .alert-info {
