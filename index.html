@@ -40,18 +40,45 @@
 				</div>
 				<!-- panel body -->
 				<div class="panel-body">
-					<!-- Nav tabs -->
-					<ul class="nav nav-tabs" role="tablist">
-						<li ><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Life</a></li>
-						<li ><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Work</a></li>
-						<li ><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Fun</a></li>
-					</ul>
-					<!-- Tab panes -->
-					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane active" id="home"> life content</div>
-						<div role="tabpanel" class="tab-pane" id="profile"> work content</div>
-						<div role="tabpanel" class="tab-pane" id="messages">fun content</div>
-					</div>
+					<article class="col-xs-12">
+						<h3>Life Actions</h3>
+						<div class="btn-group  btn-group-justified" role="group">
+							<div class="btn-group" role="group">
+								<button class="btn btn-info" ng-click="hc.lifeFactory.buyFood(hc.player)">Buy Food</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button class="btn btn-info" ng-click="hc.lifeFactory.eat(hc.player)">Eat</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button class="btn btn-info" ng-click="hc.lifeFactory.wash(hc.player)">Wash</button>
+							</div>
+						</div>
+					</article>
+					<article  class="col-xs-12">
+						<h3>Work Actions</h3>
+						<div class="btn-group btn-group-justified" role="group">
+							<div class="btn-group" role="group">
+								<button class="btn btn-info" ng-click="hc.workFactory.training(hc.player, hc.sysMsg)">Training</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button class="btn btn-info" ng-click="hc.workFactory.combat(hc.player, hc.sysMsg)">Combat</button>
+							</div>
+						</div>
+					</article>
+					<article  class="col-xs-12">
+						<h3>Fun Actions</h3>
+						<div class="btn-group  btn-group-justified" role="group">
+							<div class="btn-group" role="group">
+								<button class="btn btn-info" disabled>Jeu 1</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button class="btn btn-info" disabled>Jeu 2</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button class="btn btn-info" disabled>Jeu 3</button>
+							</div>
+						</div>
+					</article>					
 				</div>
 			</div>
 			<!-- FIN PANEL ACTIONS -->

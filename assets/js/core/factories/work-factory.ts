@@ -5,7 +5,9 @@
 module Application.Factories {
 	export class Work{
 		
-		constructor (){}
+		constructor (){
+			console.log('WorkFactory Loaded');
+		}
 
 		combat(player, msg) {
 			let win: number = Math.random();
@@ -20,11 +22,17 @@ module Application.Factories {
 				player.xp = player.xp + 5;
 				player.money = player.money + 15;
 			}
+
+			this.updateLevel(player, msg);
 		};
 
 		training(player, msg){
 			msg ='Pikachu gagne en expérience';
 			player.xp = player.xp + 5;
+			console.log(msg);
+			console.log(player.xp);
+
+			this.updateLevel(player, msg);
 		}
 
 		updateLevel(player, msg){
