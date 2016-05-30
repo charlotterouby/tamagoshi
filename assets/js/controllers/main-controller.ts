@@ -23,7 +23,6 @@ module Application.Controllers {
 			console.log(this.sysMsg);
 		};
 
-
 		// Vérification des stats du player pour lancement des msg alertes et des progress-bar
 		updateStats(player, msg) {
 			let verifStats = function(player, msg) {
@@ -57,13 +56,15 @@ module Application.Controllers {
 					stopGame();
 				}
 
-				player.life--;
+				// player.life--;
 				console.log(msg);
 			};
 
 			var verifInterval = this.interval(function(){verifStats(player, msg)}, 1000);
 			var stopGame = () => {this.interval.cancel(verifInterval)};
 		};
+
+		
 	}	
 
 }

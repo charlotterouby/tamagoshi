@@ -48,7 +48,11 @@
 					</ul>
 					<!-- Tab panes -->
 					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane active" id="home"> life content</div>
+						<div role="tabpanel" class="tab-pane active" id="home">
+							<button class="btn btn-primary" ng-click="hc.lifeFactory.buyFood(hc.player)">Buy Food</button>
+							<button class="btn btn-primary" ng-click="hc.lifeFactory.eat(hc.player)">Eat</button>
+							<button class="btn btn-primary" ng-click="hc.lifeFactory.wash(hc.player)">Wash</button>
+						</div>
 						<div role="tabpanel" class="tab-pane" id="profile"> work content</div>
 						<div role="tabpanel" class="tab-pane" id="messages">fun content</div>
 					</div>
