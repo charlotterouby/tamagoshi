@@ -4,11 +4,15 @@
 	justify-content: center;
 	align-items: center;
 
-	@media screen and (max-width: $mobile-max) {
-		img {
-			height: 25vh;
-		}
+	img{
+		height: 50vh;
 	}
+
+	// @media screen and (max-width: $mobile-max) {
+	// 	img {
+	// 		height: 65vh;
+	// 	}
+	// }
 }
 
 
