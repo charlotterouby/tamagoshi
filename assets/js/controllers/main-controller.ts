@@ -9,9 +9,10 @@ module Application.Controllers {
 		player: any;
 		lifeFactory: any;
 		workFactory: any;
+		funFactory: any;
 		sysMsg: string;
 
-		constructor($scope: ng.IScope, $interval: ng.IIntervalService, Player: any, Work: any, Life: any) {
+		constructor($scope: ng.IScope, $interval: ng.IIntervalService, Player: any, Work: any, Life: any, Fun: any) {
 			// Angular Services
 			this.scope = $scope;
 			this.interval = $interval;
@@ -21,6 +22,8 @@ module Application.Controllers {
 			this.lifeFactory = new Life;
 			// Work Factory
 			this.workFactory = new Work;
+			// Fun Factory
+			this.funFactory = new Fun;
 			// Msg Directive
 			this.sysMsg = "Hello "+ this.player.name +" !";
 			console.log(this.sysMsg);

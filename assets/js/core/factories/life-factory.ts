@@ -10,40 +10,49 @@ module Application.Factories {
 			console.log('Life Factory loaded');
 		}
 
-	 	wash( goshi: any ): any{
+	 	wash( goshi: any , msg: string): any{
 	 		if (goshi.health === 100) {
-				console.log('Je suis tout propre !');
+				msg = 'Je suis tout propre !';
+				console.log(msg);
 	 		} else if (goshi.money === 0){
-				console.log("Vous n'avez plus d'argent pour payer le toiletteur");
+				msg = "Vous n'avez plus d'argent pour payer le toiletteur";
+				console.log(msg);
 	 		} else {
 			  	goshi.health += 10;
 				goshi.life += 5;
 			  	goshi.money -= 20;
-			 	console.log( goshi.name + ' is washing');
+				msg = goshi.name + ' se lave';
+			 	console.log(msg);
 	 		}
 		};
 
-		eat( goshi: any): any{
+		eat( goshi: any, msg: string): any{
 			if (goshi.life === 100){
-				console.log("J'ai bien mangé, je vais faire une petite sieste !");
+				msg = "J'ai bien mangé, je vais faire une petite sieste !";
+				console.log(msg);
 			} else if (goshi.food === 0){
-				console.log("Il n'y a plus rien à manger ! On va faire les courses ?");
+				msg = "Il n'y a plus rien à manger ! On va faire les courses ?";
+				console.log(msg);
 			} else {
 				goshi.food -= 10;
 				goshi.life += 5;
-				console.log(goshi.name + ' is eating');
+				msg = goshi.name + ' mange';
+				console.log(msg);
 			}
 		};
 
-		buyFood( goshi: any): any{
+		buyFood( goshi: any, msg: string): any{
 			if (goshi.food ===100){
-				console.log("Votre stock de nourriture est plein !");
+				msg = "Votre stock de nourriture est plein !";
+				console.log(msg);
 			} else if (goshi.money === 0) {
-				console.log("Vous n'avez plus d'argent !");
+				msg = "Vous n'avez plus d'argent !";
+				console.log(msg);
 			} else {
+				msg = goshi.name + ' fait les courses';
 				goshi.food += 10;
 				goshi.money -= 15;
-				console.log(goshi.name + ' is buying food');
+				console.log(msg);
 			}
 		};
 	}

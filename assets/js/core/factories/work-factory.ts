@@ -1,6 +1,5 @@
 // WorkFactory
 /// <reference path="../angular.d.ts"/>
-/// /// <reference path="work-factory.ts"/>
 
 module Application.Factories {
 	export class Work{
