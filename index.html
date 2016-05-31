@@ -10,11 +10,11 @@
 	<!-- HEADER -->
 	<section class="page-header">
 		<h1>Tamagochu App</h1>
-		<button class="btn btn-primary" ng-click="hc.updateStats(hc.player, hc.sysMsg)">Commencer la partie</button>
+		<button class="btn btn-primary" ng-click="hc.updateStats(hc.player, hc.sysMsg); hc.decStats(hc.player)">Commencer la partie</button>
 	</section>
 	
 	<div class="row">
-		<!-- SECTION PRINCIPALE -->
+		<!-- SECTION PRINCIPALE --> 
 		<div class="col-xs-6 col-md-8">
 			<!-- AFFICHAGE MSG -->
 			<!-- <msg-directive sys-msg="hc.sysMsg"></msg-directive > -->
@@ -26,7 +26,7 @@
 			<!-- AFFICHAGE AVATAR -->
 			<!-- <div class="col-xs-12 col-md-6 pull-left"> -->
 				<div class="avatar col-xs-12 col-md-12">
-					<img src="assets/img/pichu.gif" alt="avatar Tamagoshu">
+					<img ng-src="{{ hc.player.img }}" alt="avatar Tamagoshu">
 				</div>
 			<!-- </div> -->
 			<!-- AFFICHAGE PANEL ACTIONS -->

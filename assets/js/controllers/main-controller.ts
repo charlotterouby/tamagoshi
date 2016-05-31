@@ -25,8 +25,9 @@ module Application.Controllers {
 			// Fun Factory
 			this.funFactory = new Fun;
 			// Msg Directive
-			this.sysMsg = "Hello "+ this.player.name +" !";
-			console.log(this.sysMsg);
+			//this.sysMsg = "Hello "+ this.player.name +" !";
+			//console.log(this.sysMsg);
+
 		};
 
 		// Vérification des stats du player pour lancement des msg alertes et des progress-bar
@@ -44,35 +45,53 @@ module Application.Controllers {
 				// Msg a afficher du moins important au plus important
 				// @ gérer visuellement les différents niveaux d'alerte des messages
 				// Fun
-				if(player.fun <= 5){
+				if(player.fun <= 40){
 					msg = "Tu joue avec moi ?";
+					$('.msgSystem').html(msg);
 				}
 				// Health
-				if(player.health <= 5){
+				if(player.health <= 40){
 					msg = "Tu peux me donner un bain ?";
+					$('.msgSystem').html(msg);
 				}
 				// Food
-				if(player.food <= 5){
+				if(player.food <= 40){
 					msg = "J'ai faim !";
+					$('.msgSystem').html(msg);
 				}
 				// Life
-				if(player.life <= 5 && player.life !== 0){
+				if(player.life <= 15 && player.life !== 0){
 					msg = "Attention votre tamagoshu n'a presque plus de point de vie !";
+					$('.msgSystem').html(msg);
 				} else if (player.life === 0) {
 					msg = "Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?";
+					$('.msgSystem').html(msg);
 					stopGame();
 				}
 
-				player.life--;
 
-				$('.msgSystem').html(msg);
-				
-				console.log(msg);
+				//console.log(msg);
 			};
 
 			var verifInterval = this.interval(function(){verifStats(player, msg)}, 1000);
 			var stopGame = () => {this.interval.cancel(verifInterval)};
 		};
+
+		decStats( player ){
+
+			let decVars = function(player){
+
+				//console.log('dec');
+
+				player.life--;
+				player.fun -= 5;
+				player.health -= 2;
+
+			}
+
+			var decInterval = this.interval( function(){ decVars(player) }, 3000);
+
+		}
 
 
 	}	

@@ -18,7 +18,8 @@ module Application.Factories {
 				life: 100,
 				food: 50,
 				fun: 50,
-				health: 50
+				health: 50,
+				img: "assets/img/pichu.gif"
 			}
 			return player;
 		}
