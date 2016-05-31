@@ -24,9 +24,7 @@ module Application.Controllers {
 			this.workFactory = new Work;
 			// Fun Factory
 			this.funFactory = new Fun;
-			// Msg Directive
-			//this.sysMsg = "Hello "+ this.player.name +" !";
-			//console.log(this.sysMsg);
+			
 
 		};
 

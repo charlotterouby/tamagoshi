@@ -1,5 +1,4 @@
 /// <reference path="core/angular.d.ts"/>
-/// <reference path="core/directives/msg-directive.ts"/>
 /// <reference path="core/directives/stats-directive.ts"/>
 /// <reference path="core/factories/life-factory.ts"/>
 /// <reference path="core/factories/player-factory.ts"/>
@@ -25,11 +24,6 @@ tamagoshiApp.factory("Work", () =>
 // WorkFactory
 tamagoshiApp.factory("Fun", () =>
 	Application.Factories.Fun
-);
-
-// Msg Directive
-tamagoshiApp.directive("msgDirective", () =>
-	new Application.Directives.MsgDirective()
 );
 
 // Stats Directive

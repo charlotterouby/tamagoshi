@@ -16,6 +16,12 @@
 	<div class="row">
 		<!-- SECTION PRINCIPALE --> 
 		<div class="col-xs-6 col-md-8">
+			<!-- AFFICHAGE AVATAR -->
+			<!-- <div class="col-xs-12 col-md-6 pull-left"> -->
+				<div class="avatar col-xs-12 col-md-12">
+					<img ng-src="{{ hc.player.img }}" alt="avatar Tamagoshu">
+				</div>
+			<!-- </div> -->
 			<!-- AFFICHAGE MSG -->
 			<!-- <msg-directive sys-msg="hc.sysMsg"></msg-directive > -->
 			<div class='msg col-md-12'>
@@ -23,12 +29,6 @@
 				  <h4 class="msgSystem"></h4>
 				</div>
 			</div>
-			<!-- AFFICHAGE AVATAR -->
-			<!-- <div class="col-xs-12 col-md-6 pull-left"> -->
-				<div class="avatar col-xs-12 col-md-12">
-					<img ng-src="{{ hc.player.img }}" alt="avatar Tamagoshu">
-				</div>
-			<!-- </div> -->
 			<!-- AFFICHAGE PANEL ACTIONS -->
 			<div class="col-xs-12 col-md-12 well">
 				<!-- Nav tabs -->
@@ -41,45 +41,26 @@
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="home"> 
-						<div class="btn-group  btn-group-justified" role="group">
-							<div class="btn-group" role="group">
-								<button class="btn btn-info" ng-click="hc.lifeFactory.buyFood(hc.player, hc.sysMsg)">Buy Food</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button class="btn btn-info" ng-click="hc.lifeFactory.eat(hc.player, hc.sysMsg)">Eat</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button class="btn btn-info" ng-click="hc.lifeFactory.wash(hc.player, hc.sysMsg)">Wash</button>
-							</div>
-						</div>
+						<h3>Life Actions</h3>
+						<button class="btn btn-info" ng-click="hc.lifeFactory.buyFood(hc.player, hc.sysMsg)">Buy Food</button>
+						<button class="btn btn-info" ng-click="hc.lifeFactory.eat(hc.player, hc.sysMsg)">Eat</button>
+						<button class="btn btn-info" ng-click="hc.lifeFactory.wash(hc.player, hc.sysMsg)">Wash</button>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="profile"> 
-						<div class="btn-group btn-group-justified" role="group">
-							<div class="btn-group" role="group">
-								<button class="btn btn-info" ng-click="hc.workFactory.training(hc.player, hc.sysMsg)">Training</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button class="btn btn-info" ng-click="hc.workFactory.combat(hc.player, hc.sysMsg)">Combat</button>
-							</div>
-						</div>
+						<h3>Work Actions</h3>
+						<button class="btn btn-info" ng-click="hc.workFactory.training(hc.player, hc.sysMsg)">Training</button>
+						<button class="btn btn-info" ng-click="hc.workFactory.combat(hc.player, hc.sysMsg)">Combat</button>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="messages">
-						<div class="btn-group  btn-group-justified" role="group">
-							<div class="btn-group" role="group">
-								<button class="btn btn-info" ng-click="hc.funFactory.playBall(hc.player, hc.sysMsg)">Ballon</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button class="btn btn-info" ng-click="hc.funFactory.playWithToy(hc.player, hc.sysMsg)">Peluche</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button class="btn btn-info" ng-click="hc.funFactory.playWithFriend(hc.player, hc.sysMsg)">Friend</button>
-							</div>
-						</div>
+						<h3>Fun Actions</h3>
+						<button class="btn btn-info" ng-click="hc.funFactory.playBall(hc.player, hc.sysMsg)">Ballon</button>
+						<button class="btn btn-info" ng-click="hc.funFactory.playWithToy(hc.player, hc.sysMsg)">Peluche</button>
+						<button class="btn btn-info" ng-click="hc.funFactory.playWithFriend(hc.player, hc.sysMsg)">Friend</button>
 					</div>
 				</div>
 			</div>	
-		</div>
 			<!-- FIN PANEL ACTIONS -->
+		</div>
 			
 		<!-- AFFICHAGE SIDEBAR	 -->
 		<div class="col-xs-6 col-md-4">
