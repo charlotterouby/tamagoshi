@@ -12,7 +12,7 @@ module Application.Factories {
 		private createPlayer(): any{
 			let player = {
 				name: "Pichu",
-				level: 1,
+				level: 3,
 				xp: 50,
 				money: 400,
 				life: 100,

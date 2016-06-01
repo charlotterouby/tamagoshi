@@ -24,7 +24,7 @@ module Application.Factories {
 				console.log(msg);
 			} else {
 				msg = 'Pikachu gagne le combat';
-				player.xp = player.xp + 5;
+				player.xp = player.xp + 50;
 				player.money = player.money + 15;
 				console.log(msg);
 			}
@@ -46,8 +46,14 @@ module Application.Factories {
 		}
 
 		updateLevel(player, msg){
-			if(player.level === 3 && player.xp === 100){
+			if(player.level === 3 && player.xp >=100){
 				msg = "Vous avez gagné la partie !";
+				console.log('gagné');
+
+				$('.frontpage').html('<p>Vous avez gagné la partie !<br> Votre pokémon a atteint son niveau max.</p>');
+				$('.overlay').fadeIn('slow');
+
+
 				// @ insérer la fonction clearInterval pour stopper la boucle de updateStats lancée en début de partie
 			} else if(player.xp === 100){
 				msg = "Tamagochu monte d'un niveau !";
