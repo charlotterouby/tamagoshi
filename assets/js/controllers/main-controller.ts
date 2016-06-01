@@ -30,6 +30,9 @@ module Application.Controllers {
 
 		// Vérification des stats du player pour lancement des msg alertes et des progress-bar
 		updateStats(player, msg) {
+
+			$('.overlay').fadeOut('slow');
+
 			let verifStats = function(player, msg) {
 				// Mise à jour des progress-bars
 				$('#playerXp .progress-bar').css("width", player.xp + "%").attr("aria-valuenow", player.xp);
