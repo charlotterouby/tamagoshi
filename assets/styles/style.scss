@@ -5,3 +5,25 @@
 body{
 	background-color: lighten(palette(jaune), 40%);
 }
+
+.overlay{
+	transition: all 1.5s ease-out;
+     position: absolute; 
+     width: 100%; 
+     height: 100%; 
+     background-color: rgba(100,100,100,0.2);
+     z-index: 50;
+     text-align: center;
+     padding-top: 15%;
+     //display: none;
+}
+
+.overlay p{
+	font-size: 8em;
+}
+
+.frontpage{
+	transition: all 1.5s ease-out;
+	background-color: #fff;
+	padding: 10vh 0px;
+}
