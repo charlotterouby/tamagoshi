@@ -14,6 +14,8 @@ module Application.Factories {
 
 			$('.msgSystem').html(msg);
 			
+			//$('.avatar').animateCss('animated swing');
+
 			console.log(msg);
 		}
 
