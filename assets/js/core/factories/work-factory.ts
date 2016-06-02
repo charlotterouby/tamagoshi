@@ -13,44 +13,49 @@ module Application.Factories {
 			return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 
-		combat(player, msg) {
+		combat(player, msg, msgType) {
 			let win: number = this.getRandomIntInclusive(0,1);
 
 			if(win === 0){
 				msg = 'Pikachu perd le combat';
+				msgType = "alert-warning";
 				player.life = player.life - 5;
 				player.health = player.health - 5;
 				player.money = player.money - 15;
 				console.log(msg);
 			} else {
 				msg = 'Pikachu gagne le combat';
-				player.xp = player.xp + 5;
+				msgType = "alert-success";
+				player.xp = player.xp + 10;
 				player.money = player.money + 15;
 				console.log(msg);
 			}
 
 			$('.msgSystem').html(msg);
 
-			this.updateLevel(player, msg);
+			this.updateLevel(player, msg, msgType);
 		};
 
-		training(player, msg){
+		training(player, msg, msgType) {
 			msg ='Pikachu gagne en expérience';
+			msgType = "alert-info";
 			player.xp = player.xp + 5;
 			console.log(msg);
 			console.log(player.xp);
 
 			$('.msgSystem').html(msg);
 
-			this.updateLevel(player, msg);
+			this.updateLevel(player, msg, msgType);
 		}
 
-		updateLevel(player, msg){
+		updateLevel(player, msg, msgType) {
 			if(player.level === 3 && player.xp === 100){
 				msg = "Vous avez gagné la partie !";
+				msgType = "alert-success";
 				// @ insérer la fonction clearInterval pour stopper la boucle de updateStats lancée en début de partie
 			} else if(player.xp === 100){
 				msg = "Tamagochu monte d'un niveau !";
+				msgType = "alert-success";
 				player.level += 1;
 				player.xp = 0;
 			}
@@ -59,12 +64,14 @@ module Application.Factories {
 				player.name = "Pikachu";
 				player.img = "assets/img/pikachu.gif";
 				msg = "Tamagochu évolue ! Il devient " + player.name;
-				// @ insérer le changement d'avatar
+				msgType = "alert-success";
+				
 			} else if (player.level === 3){
 				player.name = "Raichu";
 				player.img = "assets/img/raichu.gif";				
 				msg = "Tamagochu évolue ! Il devient " + player.name;
-				// @ insérer le changement d'avatar
+				msgType = "alert-success";
+				
 			}
 
 			$('.msgSystem').html(msg);

@@ -10,7 +10,7 @@ module Application.Controllers {
 		lifeFactory: any;
 		workFactory: any;
 		funFactory: any;
-		sysMsg: string;
+		msgType: string = "alert-info";
 
 		constructor($scope: ng.IScope, $interval: ng.IIntervalService, Player: any, Work: any, Life: any, Fun: any) {
 			// Angular Services
@@ -48,24 +48,32 @@ module Application.Controllers {
 				// Fun
 				if(player.fun <= 40){
 					msg = "Tu joue avec moi ?";
+					console.log(this.msgType);
 					$('.msgSystem').html(msg);
+
+					// Methode $apply du scope force à réévaluer les binding donc normalement les ng-class
+					this.$apply(() => this.msgType = "alert-success");
 				}
 				// Health
 				if(player.health <= 40){
 					msg = "Tu peux me donner un bain ?";
+					this.msgType = "alert-warning";
 					$('.msgSystem').html(msg);
 				}
 				// Food
 				if(player.food <= 40){
 					msg = "J'ai faim !";
+					this.msgType = "alert-warning";
 					$('.msgSystem').html(msg);
 				}
 				// Life
 				if(player.life <= 15 && player.life !== 0){
 					msg = "Attention votre tamagoshu n'a presque plus de point de vie !";
+					this.msgType = "alert-danger";
 					$('.msgSystem').html(msg);
 				} else if (player.life === 0) {
 					msg = "Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?";
+					this.msgType = "alert-danger";
 					$('.msgSystem').html(msg);
 					stopGame();
 				}

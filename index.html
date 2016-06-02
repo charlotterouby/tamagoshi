@@ -30,15 +30,21 @@
 					<img ng-src="{{ hc.player.img }}" alt="avatar Tamagoshu">
 				</div>
 			<!-- </div> -->
+			<!-- AFFICHAGE PANEL ACTIONS -->
+			<div class="col-xs-12 col-md-12 well">
 			<!-- AFFICHAGE MSG -->
 			<!-- <msg-directive sys-msg="hc.sysMsg"></msg-directive > -->
 			<div class='msg col-md-12'>
-				<div class="alert alert-info">
+				<div class="alert" ng-class="hc.msgType">
+				<!-- {	'alert-info':hc.msgType === 'info', 
+												'alert-success': hc.msgType === 'success', 
+												'alert-warning': hc.msgType === 'warning', 
+												'alert-danger': hc.msgType === 'danger'} -->
 				  <h4 class="msgSystem"></h4>
+
+				  <button>change</button>
 				</div>
 			</div>
-			<!-- AFFICHAGE PANEL ACTIONS -->
-			<div class="col-xs-12 col-md-12 well">
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">
 					<li ><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Life</a></li>
@@ -50,20 +56,20 @@
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="home"> 
 						<h3>Life Actions</h3>
-						<button class="btn btn-info" ng-click="hc.lifeFactory.buyFood(hc.player, hc.sysMsg)">Buy Food</button>
-						<button class="btn btn-info" ng-click="hc.lifeFactory.eat(hc.player, hc.sysMsg)">Eat</button>
-						<button class="btn btn-info" ng-click="hc.lifeFactory.wash(hc.player, hc.sysMsg)">Wash</button>
+						<button class="btn btn-info" ng-click="hc.lifeFactory.buyFood(hc.player, hc.sysMsg, hc.msgType)">Buy Food</button>
+						<button class="btn btn-info" ng-click="hc.lifeFactory.eat(hc.player, hc.sysMsg, hc.msgType)">Eat</button>
+						<button class="btn btn-info" ng-click="hc.lifeFactory.wash(hc.player, hc.sysMsg, hc.msgType)">Wash</button>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="profile"> 
 						<h3>Work Actions</h3>
-						<button class="btn btn-info" ng-click="hc.workFactory.training(hc.player, hc.sysMsg)">Training</button>
-						<button class="btn btn-info" ng-click="hc.workFactory.combat(hc.player, hc.sysMsg)">Combat</button>
+						<button class="btn btn-info" ng-click="hc.workFactory.training(hc.player, hc.sysMsg, hc.msgType)">Training</button>
+						<button class="btn btn-info" ng-click="hc.workFactory.combat(hc.player, hc.sysMsg, hc.msgType)">Combat</button>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="messages">
 						<h3>Fun Actions</h3>
-						<button class="btn btn-info" ng-click="hc.funFactory.playBall(hc.player, hc.sysMsg)">Ballon</button>
-						<button class="btn btn-info" ng-click="hc.funFactory.playWithToy(hc.player, hc.sysMsg)">Peluche</button>
-						<button class="btn btn-info" ng-click="hc.funFactory.playWithFriend(hc.player, hc.sysMsg)">Friend</button>
+						<button class="btn btn-info" ng-click="hc.funFactory.playBall(hc.player, hc.sysMsg, hc.msgType)">Ballon</button>
+						<button class="btn btn-info" ng-click="hc.funFactory.playWithToy(hc.player, hc.sysMsg, hc.msgType)">Peluche</button>
+						<button class="btn btn-info" ng-click="hc.funFactory.playWithFriend(hc.player, hc.sysMsg, hc.msgType)">Friend</button>
 					</div>
 				</div>
 			</div>	
