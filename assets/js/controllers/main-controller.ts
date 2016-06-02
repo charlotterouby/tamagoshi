@@ -12,6 +12,8 @@ module Application.Controllers {
 		funFactory: any;
 		msgType: string = "alert-info";
 
+		stopGame: any;
+
 		constructor($scope: ng.IScope, $interval: ng.IIntervalService, Player: any, Work: any, Life: any, Fun: any) {
 			// Angular Services
 			this.scope = $scope;
@@ -75,7 +77,7 @@ module Application.Controllers {
 					msg = "Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?";
 					this.msgType = "alert-danger";
 					$('.msgSystem').html(msg);
-					stopGame();
+					this.stopGame();
 				}
 
 
@@ -83,7 +85,7 @@ module Application.Controllers {
 			};
 
 			var verifInterval = this.interval(function(){verifStats(player, msg)}, 1000);
-			var stopGame = () => {this.interval.cancel(verifInterval)};
+			this.stopGame = () => {this.interval.cancel(verifInterval)};
 		};
 
 		decStats( player ){
