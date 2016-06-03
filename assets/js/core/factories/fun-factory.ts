@@ -7,10 +7,15 @@ module Application.Factories {
 			console.log('FunFactory Loaded');
 		}
 
+		valBetween(v, min, max) {
+			console.log(v);
+			return (Math.min(max, Math.max(min, v)));
+		}
+
 		playBall(player, msg, msgType){
 			msg = player.name + ' joue au ballon';
-			player.fun += 5;
-			player.money -= 20;
+			player.fun = this.valBetween(player.fun + 5, 0, 100);			
+			player.money = this.valBetween(player.money -20, 0, 10000000);			
 
 			$('.msgSystem').html(msg);
 			msgType = "alert-success";
@@ -22,8 +27,8 @@ module Application.Factories {
 
 		playWithFriend(player, msg, msgType){
 			msg = player.name + ' joue avec un ami';
-			player.fun += 20;
-			player.money -= 50;
+			player.fun = this.valBetween(player.fun + 20, 0, 100);
+			player.money = this.valBetween(player.money - 50, 0, 10000000);				
 
 			$('.msgSystem').html(msg);
 			msgType = "alert-success";
@@ -33,8 +38,8 @@ module Application.Factories {
 
 		playWithToy(player, msg, msgType){
 			msg = player.name + ' joue avec une peluche qui fait du bruit !';
-			player.fun += 10;
-			player.money -= 30;
+			player.fun = this.valBetween(player.fun + 10, 0, 100);
+			player.money = this.valBetween(player.money - 30, 0, 10000000);					
 
 			$('.msgSystem').html(msg);
 			msgType = "alert-success";
