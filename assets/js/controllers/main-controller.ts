@@ -73,11 +73,14 @@ module Application.Controllers {
 					msg = "Attention votre tamagoshu n'a presque plus de point de vie !";
 					this.msgType = "alert-danger";
 					$('.msgSystem').html(msg);
-				} else if (player.life === 0) {
+				} else if (player.life <= 0) {
 					msg = "Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?";
 					this.msgType = "alert-danger";
 					$('.msgSystem').html(msg);
 					this.stopGame();
+
+					$('.frontpage').html('Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?');
+					$('.overlay').fadeIn('slow');
 				}
 
 
