@@ -58,7 +58,7 @@ module Application.Factories {
 				$('.frontpage').html('<h2>Vous avez gagné la partie !<br> Votre pokémon a atteint son niveau max.</h2>');
 				$('.overlay').fadeIn('slow');
 				// stopGame
-			} else if(player.xp === 100){
+			} else if(player.xp >= 100){
 				msg = "Tamagochu monte d'un niveau !";
 				sc.msgType = "alert-success";
 				player.level += 1;
