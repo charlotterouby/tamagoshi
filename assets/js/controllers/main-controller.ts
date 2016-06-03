@@ -44,7 +44,7 @@ module Application.Controllers {
 			$('.overlay').fadeOut('slow');
 
 			this.msgType = "alert-success";
-			console.log(this.scope);
+			//console.log(this.scope);
 
 			var verifStats = function(scope, player, msg) {
 				// Mise à jour des progress-bars
@@ -66,7 +66,7 @@ module Application.Controllers {
 					msg = "Tu joue avec moi ?";
 					$('.msgSystem').html(msg);
 					scope.msgType = "alert-warning";
-					console.log(scope);
+					//console.log(scope);
 
 					// Methode $apply du scope force à réévaluer les binding donc normalement les ng-class
 					//this.$apply(() => this.msgType = "alert-success");
