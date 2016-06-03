@@ -36,13 +36,7 @@
 			<!-- <msg-directive sys-msg="hc.sysMsg"></msg-directive > -->
 			<div class='msg col-md-12'>
 				<div class="alert" ng-class="hc.msgType">
-				<!-- {	'alert-info':hc.msgType === 'info', 
-												'alert-success': hc.msgType === 'success', 
-												'alert-warning': hc.msgType === 'warning', 
-												'alert-danger': hc.msgType === 'danger'} -->
 				  <h4 class="msgSystem"></h4>
-
-				  <button>change</button>
 				</div>
 			</div>
 				<!-- Nav tabs -->
@@ -62,8 +56,8 @@
 					</div>
 					<div role="tabpanel" class="tab-pane" id="profile"> 
 						<h3>Work Actions</h3>
-						<button class="btn btn-info" ng-click="hc.workFactory.training(hc.player, hc.sysMsg, hc.msgType)">Training</button>
-						<button class="btn btn-info" ng-click="hc.workFactory.combat(hc.player, hc.sysMsg, hc.msgType)">Combat</button>
+						<button class="btn btn-info" ng-click="hc.workFactory.training(hc.player, hc.sysMsg, hc.scope.hc)">Training</button>
+						<button class="btn btn-info" ng-click="hc.workFactory.combat(hc.player, hc.sysMsg, hc.scope.hc)">Combat</button>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="messages">
 						<h3>Fun Actions</h3>

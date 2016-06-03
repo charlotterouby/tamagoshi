@@ -13,53 +13,54 @@ module Application.Factories {
 			return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 
-		combat(player, msg, msgType) {
+		combat(player, msg, sc) {
 			let win: number = this.getRandomIntInclusive(0,1);
 
 			if(win === 0){
 				msg = 'Pikachu perd le combat';
-				msgType = "alert-warning";
+				sc.msgType = "alert-warning";
 				player.life = player.life - 5;
 				player.health = player.health - 5;
 				player.money = player.money - 15;
 				console.log(msg);
 			} else {
 				msg = 'Pikachu gagne le combat';
-				msgType = "alert-success";
-				player.xp = player.xp + 50;
+				sc.msgType = "alert-success";
+				player.xp = player.xp + 20;
 				player.money = player.money + 15;
 				console.log(msg);
 			}
 
 			$('.msgSystem').html(msg);
 
-			this.updateLevel(player, msg, msgType);
+			this.updateLevel(player, msg, sc);
 		};
 
-		training(player, msg, msgType) {
+		training(player, msg, sc) {
 			msg ='Pikachu gagne en expérience';
-			msgType = "alert-info";
+			sc.msgType = "alert-success";
 			player.xp = player.xp + 5;
 			console.log(msg);
 			console.log(player.xp);
+			console.log(sc);
 
 			$('.msgSystem').html(msg);
 
-			this.updateLevel(player, msg, msgType);
+			this.updateLevel(player, msg, sc);
 		}
 
 
-		updateLevel(player, msg, msgType){
+		updateLevel(player, msg, sc){
 			if(player.level === 3 && player.xp >=100){
-				msg = "Vous avez gagné la partie !";
-				console.log('gagné');
-				msgType = "alert-success";
+				// msg = "Vous avez gagné la partie !";
+				// console.log('gagné');
+				// sc.msgType = "alert-success";
 				$('.frontpage').html('<h2>Vous avez gagné la partie !<br> Votre pokémon a atteint son niveau max.</h2>');
 				$('.overlay').fadeIn('slow');
-				// @ insérer la fonction clearInterval pour stopper la boucle de updateStats lancée en début de partie
+				// stopGame
 			} else if(player.xp === 100){
 				msg = "Tamagochu monte d'un niveau !";
-				msgType = "alert-success";
+				sc.msgType = "alert-success";
 				player.level += 1;
 				player.xp = 0;
 			}
@@ -68,13 +69,13 @@ module Application.Factories {
 				player.name = "Pikachu";
 				player.img = "assets/img/pikachu.gif";
 				msg = "Tamagochu évolue ! Il devient " + player.name;
-				msgType = "alert-success";
+				sc.msgType = "alert-success";
 				
 			} else if (player.level === 3){
 				player.name = "Raichu";
 				player.img = "assets/img/raichu.gif";				
 				msg = "Tamagochu évolue ! Il devient " + player.name;
-				msgType = "alert-success";
+				sc.msgType = "alert-success";
 				
 			}
 

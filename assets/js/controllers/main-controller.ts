@@ -33,7 +33,7 @@ module Application.Controllers {
 			this.workFactory = new Work;
 			// Fun Factory
 			this.funFactory = new Fun;
-			//this.msgType = "alert-info";
+			//scope.msgType = "alert-info";
 
 		};
 
@@ -43,7 +43,7 @@ module Application.Controllers {
 
 			$('.overlay').fadeOut('slow');
 
-			this.msgType = "alert-success";
+			// this.msgType = "alert-success";
 			//console.log(this.scope);
 
 			var verifStats = function(scope, player, msg) {
@@ -57,41 +57,40 @@ module Application.Controllers {
 
 
 				//console.log(player);
-				//this.msgType = "alert-warning";
+				//scope.msgType = "alert-warning";
 
 				// Msg a afficher du moins important au plus important
-				// @ gérer visuellement les différents niveaux d'alerte des messages
 				// Fun
 				if(player.fun <= 40){
 					msg = "Tu joue avec moi ?";
 					$('.msgSystem').html(msg);
-					scope.msgType = "alert-warning";
+					scope.msgType = "alert-info";
 					//console.log(scope);
 
 					// Methode $apply du scope force à réévaluer les binding donc normalement les ng-class
-					//this.$apply(() => this.msgType = "alert-success");
+					//this.$apply(() => scope.msgType = "alert-success");
 				}
 				// Health
 				if(player.health <= 40){
 					msg = "Tu peux me donner un bain ?";
-					this.msgType = "alert-warning";
+					scope.msgType = "alert-info";
 					$('.msgSystem').html(msg);
 				}
 				// Food
 				if(player.food <= 40){
 					msg = "J'ai faim !";
-					this.msgType = "alert-warning";
+					scope.msgType = "alert-warning";
 					$('.msgSystem').html(msg);
 				}
 				// Life
 				if(player.life <= 15 && player.life !== 0){
 					msg = "Attention votre tamagoshu n'a presque plus de point de vie !";
-					this.msgType = "alert-danger";
+					scope.msgType = "alert-danger";
 					$('.msgSystem').html(msg);
 				} else if (player.life <= 0) {
-					msg = "Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?";
-					this.msgType = "alert-danger";
-					$('.msgSystem').html(msg);
+					// msg = "Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?";
+					// scope.msgType = "alert-danger";
+					// $('.msgSystem').html(msg);
 					this.stopGame();
 
 					$('.frontpage').html('Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?');
