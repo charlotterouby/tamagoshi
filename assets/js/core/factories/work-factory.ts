@@ -54,7 +54,7 @@ module Application.Factories {
 				msg = "Vous avez gagné la partie !";
 				console.log('gagné');
 				msgType = "alert-success";
-				$('.frontpage').html('<p>Vous avez gagné la partie !<br> Votre pokémon a atteint son niveau max.</p>');
+				$('.frontpage').html('<h2>Vous avez gagné la partie !<br> Votre pokémon a atteint son niveau max.</h2>');
 				$('.overlay').fadeIn('slow');
 				// @ insérer la fonction clearInterval pour stopper la boucle de updateStats lancée en début de partie
 			} else if(player.xp === 100){
