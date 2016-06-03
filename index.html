@@ -50,9 +50,9 @@
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="home"> 
 						<h3>Life Actions</h3>
-						<button class="btn btn-info" ng-click="hc.lifeFactory.buyFood(hc.player, hc.sysMsg, hc.msgType)">Buy Food</button>
-						<button class="btn btn-info" ng-click="hc.lifeFactory.eat(hc.player, hc.sysMsg, hc.msgType)">Eat</button>
-						<button class="btn btn-info" ng-click="hc.lifeFactory.wash(hc.player, hc.sysMsg, hc.msgType)">Wash</button>
+						<button class="btn btn-info" ng-click="hc.lifeFactory.buyFood(hc.player, hc.sysMsg, hc.scope.hc)">Buy Food</button>
+						<button class="btn btn-info" ng-click="hc.lifeFactory.eat(hc.player, hc.sysMsg, hc.scope.hc)">Eat</button>
+						<button class="btn btn-info" ng-click="hc.lifeFactory.wash(hc.player, hc.sysMsg, hc.scope.hc)">Wash</button>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="profile"> 
 						<h3>Work Actions</h3>
@@ -61,9 +61,9 @@
 					</div>
 					<div role="tabpanel" class="tab-pane" id="messages">
 						<h3>Fun Actions</h3>
-						<button class="btn btn-info" ng-click="hc.funFactory.playBall(hc.player, hc.sysMsg, hc.msgType)">Ballon</button>
-						<button class="btn btn-info" ng-click="hc.funFactory.playWithToy(hc.player, hc.sysMsg, hc.msgType)">Peluche</button>
-						<button class="btn btn-info" ng-click="hc.funFactory.playWithFriend(hc.player, hc.sysMsg, hc.msgType)">Friend</button>
+						<button class="btn btn-info" ng-click="hc.funFactory.playBall(hc.player, hc.sysMsg, hc.scope.hc)">Ballon</button>
+						<button class="btn btn-info" ng-click="hc.funFactory.playWithToy(hc.player, hc.sysMsg, hc.scope.hc)">Peluche</button>
+						<button class="btn btn-info" ng-click="hc.funFactory.playWithFriend(hc.player, hc.sysMsg, hc.scope.hc)">Friend</button>
 					</div>
 				</div>
 			</div>	

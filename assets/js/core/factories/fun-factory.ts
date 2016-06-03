@@ -12,37 +12,37 @@ module Application.Factories {
 			return (Math.min(max, Math.max(min, v)));
 		}
 
-		playBall(player, msg, msgType){
+		playBall(player, msg, sc){
 			msg = player.name + ' joue au ballon';
 			player.fun = this.valBetween(player.fun + 5, 0, 100);			
 			player.money = this.valBetween(player.money -20, 0, 10000000);			
 
 			$('.msgSystem').html(msg);
-			msgType = "alert-success";
+			sc.msgType = "alert-success";
 			
 			//$('.avatar').animateCss('animated swing');
 
 			console.log(msg);
 		}
 
-		playWithFriend(player, msg, msgType){
+		playWithFriend(player, msg, sc){
 			msg = player.name + ' joue avec un ami';
 			player.fun = this.valBetween(player.fun + 20, 0, 100);
 			player.money = this.valBetween(player.money - 50, 0, 10000000);				
 
 			$('.msgSystem').html(msg);
-			msgType = "alert-success";
+			sc.msgType = "alert-success";
 
 			console.log(msg);
 		}
 
-		playWithToy(player, msg, msgType){
+		playWithToy(player, msg, sc){
 			msg = player.name + ' joue avec une peluche qui fait du bruit !';
 			player.fun = this.valBetween(player.fun + 10, 0, 100);
 			player.money = this.valBetween(player.money - 30, 0, 10000000);					
 
 			$('.msgSystem').html(msg);
-			msgType = "alert-success";
+			sc.msgType = "alert-success";
 
 			console.log(msg);
 		}
