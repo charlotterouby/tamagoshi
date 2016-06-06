@@ -47,18 +47,6 @@ module Application.Controllers {
 			//console.log(this.scope);
 
 			var verifStats = function(scope, player, msg) {
-				// Mise à jour des progress-bars
-				$('#playerXp .progress-bar').css("width", player.xp + "%").attr("aria-valuenow", player.xp);
-				$('#playerLife .progress-bar').css("width", player.life + "%").attr("aria-valuenow", player.life);
-				$('#playerFood .progress-bar').css("width", player.food + "%").attr("aria-valuenow", player.food);
-				$('#playerHealth .progress-bar').css("width", player.health + "%").attr("aria-valuenow", player.health);
-				$('#playerFun .progress-bar').css("width", player.fun + "%").attr("aria-valuenow", player.fun);
-
-
-
-				//console.log(player);
-				//scope.msgType = "alert-warning";
-
 				// Msg a afficher du moins important au plus important
 				// Fun
 				if(player.fun <= 40){
