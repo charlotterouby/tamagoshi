@@ -33,7 +33,6 @@ module Application.Controllers {
 			this.workFactory = new Work;
 			// Fun Factory
 			this.funFactory = new Fun;
-			//scope.msgType = "alert-info";
 
 		};
 

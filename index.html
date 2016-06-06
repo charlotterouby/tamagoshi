@@ -19,7 +19,7 @@
 	</div>
 
 <div class="container-fluid">
-	<h1>Tamagochu App</h1>
+	<h1 class="hidden-sm hidden-xs">Tamagochu App</h1>
 	
 	<div class="row">
 		<!-- SECTION PRINCIPALE --> 
@@ -33,12 +33,8 @@
 			<!-- AFFICHAGE PANEL ACTIONS -->
 			<div class="col-xs-12 col-md-12 well">
 			<!-- AFFICHAGE MSG -->
-			<!-- <msg-directive sys-msg="hc.sysMsg"></msg-directive > -->
-			<div class='msg col-md-12'>
-				<div class="alert" ng-class="hc.msgType">
-				  <h4 class="msgSystem"></h4>
-				</div>
-			</div>
+			<msg-directive data-msg-text="hc.sysMsg" data-msg-type="hc.msgType"></msg-directive>
+			
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">
 					<li ><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Life</a></li>
