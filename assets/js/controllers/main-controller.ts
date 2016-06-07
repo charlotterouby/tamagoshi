@@ -16,11 +16,9 @@ module Application.Controllers {
 
 
 		constructor($scope: ng.IScope, $interval: ng.IIntervalService, Player: any, Work: any, Life: any, Fun: any) {
-			// Angular Services
-
-
+			// Angular Service
 			$scope.$watch('msgType', function() {
-			        console.log('hey, myVar has changed!');
+			    console.log('hey, myVar has changed!');
 			});
 
 			this.scope = $scope;
@@ -37,13 +35,9 @@ module Application.Controllers {
 		};
 
 
-		// Vérification des stats du player pour lancement des msg alertes et des progress-bar
+		// Vérification des stats du player pour lancement des msg alertes
 		updateStats( player, msg) {
-
 			$('.overlay').fadeOut('slow');
-
-			// this.msgType = "alert-success";
-			//console.log(this.scope);
 
 			var verifStats = function(scope, player, msg) {
 				// Msg a afficher du moins important au plus important
@@ -52,10 +46,6 @@ module Application.Controllers {
 					msg = "Tu joue avec moi ?";
 					$('.msgSystem').html(msg);
 					scope.msgType = "alert-info";
-					//console.log(scope);
-
-					// Methode $apply du scope force à réévaluer les binding donc normalement les ng-class
-					//this.$apply(() => scope.msgType = "alert-success");
 				}
 				// Health
 				if(player.health <= 40){
@@ -64,7 +54,7 @@ module Application.Controllers {
 					$('.msgSystem').html(msg);
 				}
 				// Food
-				if(player.food <= 40){
+				if(player.life <= 40){
 					msg = "J'ai faim !";
 					scope.msgType = "alert-warning";
 					$('.msgSystem').html(msg);
@@ -75,42 +65,26 @@ module Application.Controllers {
 					scope.msgType = "alert-danger";
 					$('.msgSystem').html(msg);
 				} else if (player.life <= 0) {
-					// msg = "Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?";
-					// scope.msgType = "alert-danger";
-					// $('.msgSystem').html(msg);
+					// @ pblm avec fonction stopGame qui n'est pas reconnue
 					this.stopGame();
-
 					$('.frontpage').html('Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?');
 					$('.overlay').fadeIn('slow');
 				}
-
-
-				//console.log(msg);
 			};
 
 			var sc = this.scope.hc;
 
-			var verifInterval = this.interval(function(){verifStats( sc, player, msg)}, 1000) ;
+			var verifInterval = this.interval(function(){verifStats(sc, player, msg)}, 1000) ;
 			this.stopGame = () => {this.interval.cancel(verifInterval)};
 		};
 
 		decStats( player ){
-
 			let decVars = function(player){
-
-				//console.log('dec');
-
 				player.life--;
 				player.fun -= 5;
 				player.health -= 2;
-
 			}
-
 			var decInterval = this.interval( function(){ decVars(player) }, 3000);
-
 		};
-
-
-	}	
-
+	}
 }

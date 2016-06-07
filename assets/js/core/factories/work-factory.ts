@@ -65,13 +65,13 @@ module Application.Factories {
 				player.xp = 0;
 			}
 
-			if(player.level === 2){
+			if(player.level === 2 && player.xp === 0){
 				player.name = "Pikachu";
 				player.img = "assets/img/pikachu.gif";
 				msg = "Tamagochu évolue ! Il devient " + player.name;
 				sc.msgType = "alert-success";
 				
-			} else if (player.level === 3){
+			} else if (player.level === 3 && player.xp === 0) {
 				player.name = "Raichu";
 				player.img = "assets/img/raichu.gif";				
 				msg = "Tamagochu évolue ! Il devient " + player.name;
