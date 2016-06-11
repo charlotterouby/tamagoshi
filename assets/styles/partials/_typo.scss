@@ -1,24 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Geo:400,400italic&subset=latin,latin-ext);
 
-h1,h2, h3, h4, h5, h6 {
-		font-family: 'Geo';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Geo';
 }
 
-h1 {
-	color: palette(jaune);
-	small{
-		color: palette(jaune, mid-dark);
-	}
+h1,
+.h1 {
+    color: palette(jaune);
+
+    small {
+        color: palette(jaune, mid-dark);
+    }
 }
 
 @media screen and (min-width: $tablet-min) {
-	h1 {
-		font-size: 3em;
-	}
 
-	h2, .panel-heading > h2, h3 {
-		height: auto;
-		font-size: 2em;
-	}
+    h1 {
+        font-size: 3em;
+    }
+
+    h2,
+    .panel-heading > h2,
+    h3 {
+        font-size: 2em;
+        height: auto;
+    }
 }
-

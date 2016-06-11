@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr" ng-app="tamagoshiApp">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Tamagoshi</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-0UBL8wxZ28kqJ8w8N8RUV0odBG5w8D/Y+rb+o7hr2F3dS9twlAE8S7VUtVSRe5cc" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://github.com/daneden/animate.css/blob/master/animate.min.css">
-	<link rel="stylesheet" href="dist/style.css">
+    <meta charset="UTF-8">
+    <title>Tamagoshi</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-0UBL8wxZ28kqJ8w8N8RUV0odBG5w8D/Y+rb+o7hr2F3dS9twlAE8S7VUtVSRe5cc" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://github.com/daneden/animate.css/blob/master/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/style.css">
 </head>
+
 <body ng-controller="HomeController as hc">
-	<!-- HEADER -->
+    <!-- HEADER -->
 
 
-	<div class="overlay">	
-		<section class="frontpage">
-		<h1>Tamagochu App</h1>
-		<button class="btn btn-primary" ng-click="hc.updateStats(hc.player, hc.sysMsg); hc.decStats(hc.player)">Commencer la partie</button>
-		</section>
-	</div>
+    <div class="overlay">
+        <section class="frontpage">
+            <h2 class="h1">Tamagochu App</h2>
+            <button class="btn btn-primary" ng-click="hc.updateStats(hc.player, hc.sysMsg); hc.decStats(hc.player)">Commencer la partie</button>
+        </section>
+    </div>
 
-<div class="container-fluid">
-	<h1 class="hidden-sm hidden-xs">Tamagochu App</h1>
-	
-	<div class="row">
-		<!-- SECTION PRINCIPALE --> 
-		<div class="col-xs-6 col-md-8">
-			<!-- AFFICHAGE AVATAR -->
-			<!-- <div class="col-xs-12 col-md-6 pull-left"> -->
-				<div class="avatar col-xs-12 col-md-12">
-					<img ng-src="{{ hc.player.img }}" alt="avatar Tamagoshu">
-				</div>
-			<!-- </div> -->
-			<!-- AFFICHAGE PANEL ACTIONS -->
-			<div class="col-xs-12 col-md-12 well">
-			<!-- AFFICHAGE MSG -->
-			<msg-directive data-msg-text="hc.sysMsg" data-msg-type="hc.msgType"></msg-directive>
-			
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs" role="tablist">
-					<li ><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Life</a></li>
-					<li ><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Work</a></li>
-					<li ><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Fun</a></li>
-				</ul>
+    <div class="container-fluid">
+        <h1 class="hidden-sm hidden-xs">Tamagochu App</h1>
 
-				<!-- Tab panes -->
-				<div class="tab-content">
-					<div role="tabpanel" class="tab-pane active" id="home"> 
-						<h3>Life Actions</h3>
-						<button class="btn btn-info" ng-click="hc.lifeFactory.buyFood(hc.player, hc.sysMsg, hc.scope.hc)">Buy Food</button>
-						<button class="btn btn-info" ng-click="hc.lifeFactory.eat(hc.player, hc.sysMsg, hc.scope.hc)">Eat</button>
-						<button class="btn btn-info" ng-click="hc.lifeFactory.wash(hc.player, hc.sysMsg, hc.scope.hc)">Wash</button>
-					</div>
-					<div role="tabpanel" class="tab-pane" id="profile"> 
-						<h3>Work Actions</h3>
-						<button class="btn btn-info" ng-click="hc.workFactory.training(hc.player, hc.sysMsg, hc.scope.hc)">Training</button>
-						<button class="btn btn-info" ng-click="hc.workFactory.combat(hc.player, hc.sysMsg, hc.scope.hc)">Combat</button>
-					</div>
-					<div role="tabpanel" class="tab-pane" id="messages">
-						<h3>Fun Actions</h3>
-						<button class="btn btn-info" ng-click="hc.funFactory.playBall(hc.player, hc.sysMsg, hc.scope.hc)">Ballon</button>
-						<button class="btn btn-info" ng-click="hc.funFactory.playWithToy(hc.player, hc.sysMsg, hc.scope.hc)">Peluche</button>
-						<button class="btn btn-info" ng-click="hc.funFactory.playWithFriend(hc.player, hc.sysMsg, hc.scope.hc)">Friend</button>
-					</div>
-				</div>
-			</div>	
-			<!-- FIN PANEL ACTIONS -->
-		</div>
-			
-		<!-- AFFICHAGE SIDEBAR	 -->
-		<div class="col-xs-6 col-md-4">
-			<!-- AFFICHAGE STATS -->
-			<div data-stats-directive data-player="hc.player"></div>
-		</div>
-		<!-- FIN SIDEBAR  -->
-	</div>
+        <div class="row">
+            <!-- SECTION PRINCIPALE -->
+            <div class="col-xs-6 col-md-8">
+                <!-- AFFICHAGE AVATAR -->
+                <!-- <div class="col-xs-12 col-md-6 pull-left"> -->
+                <div class="avatar col-xs-12 col-md-12">
+                    <img ng-src="{{ hc.player.img }}" alt="avatar Tamagoshu">
+                </div>
+                <!-- </div> -->
+                <!-- AFFICHAGE PANEL ACTIONS -->
+                <div class="col-xs-12 col-md-12 well">
+                    <!-- AFFICHAGE MSG -->
+                    <msg-directive data-msg-text="hc.sysMsg" data-msg-type="hc.msgType"></msg-directive>
 
-</div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Life</a></li>
+                        <li><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Work</a></li>
+                        <li><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Fun</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <h3>Life Actions</h3>
+                            <button class="btn btn-info" ng-click="hc.lifeFactory.buyFood(hc.player, hc.sysMsg, hc.scope.hc)">Buy Food</button>
+                            <button class="btn btn-info" ng-click="hc.lifeFactory.eat(hc.player, hc.sysMsg, hc.scope.hc)">Eat</button>
+                            <button class="btn btn-info" ng-click="hc.lifeFactory.wash(hc.player, hc.sysMsg, hc.scope.hc)">Wash</button>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <h3>Work Actions</h3>
+                            <button class="btn btn-info" ng-click="hc.workFactory.training(hc.player, hc.sysMsg, hc.scope.hc)">Training</button>
+                            <button class="btn btn-info" ng-click="hc.workFactory.combat(hc.player, hc.sysMsg, hc.scope.hc)">Combat</button>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            <h3>Fun Actions</h3>
+                            <button class="btn btn-info" ng-click="hc.funFactory.playBall(hc.player, hc.sysMsg, hc.scope.hc)">Ballon</button>
+                            <button class="btn btn-info" ng-click="hc.funFactory.playWithToy(hc.player, hc.sysMsg, hc.scope.hc)">Peluche</button>
+                            <button class="btn btn-info" ng-click="hc.funFactory.playWithFriend(hc.player, hc.sysMsg, hc.scope.hc)">Friend</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN PANEL ACTIONS -->
+            </div>
+
+            <!-- AFFICHAGE SIDEBAR	 -->
+            <div class="col-xs-6 col-md-4">
+                <!-- AFFICHAGE STATS -->
+                <div data-stats-directive data-player="hc.player"></div>
+            </div>
+            <!-- FIN SIDEBAR  -->
+        </div>
+
+    </div>
 
 
-	<!-- SCRIPTS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<script src="dist/scripts.js"></script>
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="dist/scripts.js"></script>
 
 
 </body>
+
 </html>

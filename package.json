@@ -1,0 +1,29 @@
+{
+  "name": "tamagoshi",
+  "version": "1.0.0",
+  "description": "Une application AngularJS créée en équipe dans le cadre d'une formation professionnalisante AngularJS",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlotterouby/tamagoshi.git"
+  },
+  "keywords": [
+    "AngularJS"
+  ],
+  "author": "Charlotte Rouy & Yann Parmentier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlotterouby/tamagoshi/issues"
+  },
+  "homepage": "https://github.com/charlotterouby/tamagoshi#readme"
+}
