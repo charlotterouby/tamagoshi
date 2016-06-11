@@ -14,7 +14,7 @@ Auteurs : Charlotte Rouby & Yann Parmentier
 
 ## Installation
 
-Il suffit de télécharger le repo. AngularJS et la feuille de style Boostwatch sont téléchargées par CDN.
+Il suffit de télécharger les fichiers du repo. AngularJS et la feuille de style Boostwatch sont téléchargées par CDN.
 
 ## Tests
 
@@ -22,4 +22,4 @@ Ils ne sont pas encore mis en place mais ils devraient prochainement être réal
 
 ## Contributors
 
-Si vous souhaitez contribuer, vous pouvez fair un fork. Il vous suffit d'installer les nodes_modules nécessaires au fonctionnement du gulpfile.
+Si vous souhaitez contribuer, vous pouvez faire un fork. Il vous suffit d'installer les nodes_modules nécessaires au fonctionnement du gulpfile.
