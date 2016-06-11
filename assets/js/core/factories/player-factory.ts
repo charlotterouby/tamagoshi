@@ -13,7 +13,7 @@ module Application.Factories {
             let player = {
                 name: "Pichu",
                 level: 1,
-                xp: 50,
+                xp: 0,
                 money: 400,
                 life: 100,
                 food: 50,

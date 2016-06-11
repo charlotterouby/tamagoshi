@@ -6,6 +6,7 @@ module Application.Controllers {
     export class HomeController {
         scope: any;
         interval: any;
+timeout: any;
         player: any;
         lifeFactory: any;
         workFactory: any;
@@ -14,9 +15,10 @@ module Application.Controllers {
         msgType: string;
 
 
-        constructor($scope: ng.IScope, $interval: ng.IIntervalService, Player: any, Work: any, Life: any, Fun: any) {
+constructor($scope: ng.IScope, $interval: ng.IIntervalService, $timeout:ng.ITimeoutService, Player: any, Work: any, Life: any, Fun: any) {
             this.scope = $scope;
             this.interval = $interval;
+            this.timeout = $timeout;
             // Player Factory
             this.player = new Player;
             // Life Factory
@@ -56,10 +58,10 @@ module Application.Controllers {
                     scope.msgType = "alert-danger";
                     $('.msgSystem').html(msg);
                 } else if (player.life <= 0) {
-                    // @ Arrêter le timer
-                    scope.interval.cancel(verifInterval);
                     $('.frontpage').html('Oh non ! Tamagoshu est mort. Voulez-vous recommencer la partie ?');
                     $('.overlay').fadeIn('slow');
+
+                    this.timeout(scope.interval.cancel(verifInterval), 2000);
                 }
             };
 
@@ -71,7 +73,7 @@ module Application.Controllers {
 
         //Modifications auto des stats du tamagoshu
         decStats( player ){
-            let decVars = function(scope, player){
+            var decVars = function(scope, player){
                 //Si le jeu est gagné OU si le joueur est mort
                 if(player.level === 3 && player.xp >= 100 || player.life <= 0){
                     console.log('stop game');
@@ -81,14 +83,14 @@ module Application.Controllers {
                     player.life--;
 
                     //Influence du fun sur les stats
-                    if(player.fun !== 0){
+                    if(player.fun > 0){
                         player.fun -= 5;
                     } else {
                         player.life -= 2;
                     }
 
                     //Influence de la santé sur les stats
-                    if (player.health !== 0){
+                    if (player.health > 0){
                         player.health -= 2;
                     } else {
                         player.life -= 5;
